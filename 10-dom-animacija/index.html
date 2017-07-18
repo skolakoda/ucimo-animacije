@@ -1,0 +1,44 @@
+<!doctype HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript animacija</title>
+
+	<script>
+		let element = null;
+		let interval;
+
+		function init() {
+			element = document.getElementById('tenkic');
+			element.style.position = 'relative';
+			element.style.left = '0px';
+		}
+
+		function mrdaDesno() {
+			element.style.left = parseInt(element.style.left) + 10 + 'px';
+			interval = setTimeout(mrdaDesno, 100); // poziva sebe svakih 100 ms
+		}
+
+		function stop() {
+			clearTimeout(interval);
+			element.style.left = '0px';
+		}
+
+		window.onload = init;
+	</script>
+</head>
+
+<body>
+
+	<img id="tenkic" src="slike/panzer3-desno.png" />
+	<p>Klikni da tenk ide desno</p>
+
+	<form>
+		<input type="button" value="Kreni" onclick="mrdaDesno();" />
+		<input type="button" value="Stani" onclick="stop();" />
+	</form>
+
+</body>
+
+</html>

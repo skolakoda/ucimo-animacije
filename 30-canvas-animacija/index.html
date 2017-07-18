@@ -1,0 +1,53 @@
+<!doctype html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Animacija proba</title>
+	<style>
+		body {
+			background: black;
+		}
+
+		canvas {
+			width: 1000px;
+			height: 500px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<canvas id="canvas2" width="1000" height="500"></canvas>
+
+	<script>
+		if (!window.requestAnimationFrame) {
+			window.requestAnimationFrame = webkitRequestAnimationFrame || mozRequestAnimationFrame || msRequestAnimationFrame || function(callback) {
+				window.setInterval(callback, 1000 / 60)
+			};
+		}
+		var canvas = document.getElementById('canvas2');
+		var ctx = canvas.getContext('2d');
+		var x = 10;
+		var y = 10;
+		var dx = 1;
+		var dy = 0;
+		var running = true;
+
+		function mainloop() {
+			if (!running) return;
+			window.requestAnimationFrame(mainloop);
+			x += dx;
+			y += dy;
+
+			dy += .001; //malo kvazi-gravitacije
+
+			ctx.fillStyle = 'black';
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+			ctx.fillStyle = 'red';
+			ctx.fillRect(x, y, 50, 50);
+		};
+
+		mainloop()
+	</script>
+</body>
