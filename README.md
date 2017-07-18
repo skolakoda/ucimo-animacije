@@ -1,1 +1,3 @@
-# ucimo-animacije
+# Učimo animacije
+
+Učimo Javaskript animacije
