@@ -1,6 +1,8 @@
 # Učimo animacije
 
-Učimo Javaskript animacije
+Učimo Javaskript animacije.
+
+Sve animacije možeš videti ovde: [skolakoda.org/ucimo-animacije/](http://skolakoda.org/ucimo-animacije/)
 
 - [10-dom-animacija](10-dom-animacija)
 - [20-sprite-animacija](20-sprite-animacija)
