@@ -1,9 +1,7 @@
+[![](screen.png)](http://mudroljub.github.io/javascript-magic/)
+
 # Učimo animacije
 
 Učimo Javaskript animacije.
 
-Animacije možeš videti na delu ovde: [skolakoda.org/ucimo-animacije/](http://skolakoda.org/ucimo-animacije/)
-
-## TODO
-
-- dodati JS magiju
+Slobodno preuzmi repo i vidi šta ima zanimljivo.

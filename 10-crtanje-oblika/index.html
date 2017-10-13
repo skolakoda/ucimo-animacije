@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Crtanje na platnu</title>
+  <meta charset="UTF-8" />
+  <style type="text/css">
+
+  </style>
+  <script type="text/javascript">
+    function draw() {
+      var platno = document.getElementById('platno').getContext('2d');
+      var paleta = ["#701206", "ff0000", "#B36330", "#FFC861", "#96FFC9", "#276344", "orange", "yellow"];
+
+      document.getElementById("platno").style.backgroundColor = "lightblue";
+
+      //crta jedan kvadrat
+      platno.fillStyle = paleta[0];
+      platno.fillRect(60, 140, 250, 150);
+
+      //crta drugi kvadrat
+      platno.fillStyle = paleta[1];
+      platno.fillRect(20, 20, 200, 100);
+
+      //crta krug (arc znaci luk)
+      platno.fillStyle = paleta[2];
+      platno.beginPath();
+      platno.arc(100, 95, 80, 0, 2 * Math.PI);
+      platno.closePath();
+      platno.fill();
+      platno.lineWidth = 4;
+      platno.stroke();
+
+      //crta manji krug
+      platno.fillStyle = paleta[3];
+      platno.beginPath();
+      platno.arc(75, 75, 25, 0, 2 * Math.PI);
+      platno.closePath();
+      platno.fill();
+
+      //crta donji polukrug, kad je true crta kontrakazaljci
+      platno.fillStyle = paleta[4];
+      platno.beginPath();
+      platno.arc(150, 250, 66, 0, Math.PI, true);
+      platno.closePath();
+      platno.fill();
+
+      //crta gornji polukrug
+      platno.fillStyle = paleta[5];
+      platno.beginPath();
+      platno.arc(300, 250, 66, Math.PI, 2 * Math.PI, true);
+      platno.closePath();
+      platno.fill();
+
+      //piše slova
+      platno.font = "30px Verdana";
+      platno.fillText("Zdravo svete!", 50, 350);
+
+      //crta bezier krivu
+      platno.fillStyle = paleta[6];
+      platno.beginPath();
+      platno.moveTo(30, 30);
+      platno.lineTo(150, 150);
+      platno.bezierCurveTo(60, 70, 60, 70, 70, 150);
+      platno.lineTo(30, 30);
+      platno.fill();
+
+      //crta trougao
+      platno.fillStyle = paleta[7];
+      platno.beginPath();
+      platno.moveTo(250, 75);
+      platno.lineTo(300, 125);
+      platno.lineTo(300, 25);
+      platno.fill();
+
+      //crta liniju
+      platno.beginPath();
+      platno.moveTo(35, 365);
+      platno.lineTo(275, 365);
+      platno.stroke();
+
+    } // end draw
+  </script>
+</head>
+
+<body onload="draw()">
+  <h1>Crtanje na platnu</h1>
+
+  <canvas id="platno" width="800" height="600"></canvas>
+</body>
+
+</html>
